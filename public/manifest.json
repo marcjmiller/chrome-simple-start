@@ -7,6 +7,6 @@
   "author": "Marc J. Miller",
 
   "chrome_url_overrides": {
-    "newtab": "build/index.html"
+    "newtab": "index.html"
   }
 }
