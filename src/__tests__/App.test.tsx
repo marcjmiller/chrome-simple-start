@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from '../App';
+import App from '../components/App';
 
 describe('App.tsx tests', () => {
   
@@ -9,8 +9,8 @@ describe('App.tsx tests', () => {
   });
 
   it('should render the greeter text', () => {
-    const greetingContainer = screen.getByText(/chrome-simple-start/i);
-    expect(greetingContainer).toBeInTheDocument();
+    const headingContainer = screen.getByText(/chrome-simple-start/i);
+    expect(headingContainer).toBeInTheDocument();
   });
 
   it('should render a clock container', () => {
@@ -22,14 +22,11 @@ describe('App.tsx tests', () => {
     const searchContainer = screen.getByTestId('search-container');
     expect(searchContainer).toBeInTheDocument();
   })
-  
-  it('should render a resource container', () => {
+
+  it('should render 5 resource containers', () => {
+    const resourceElement = screen.getAllByTestId('resource');
     const resourceContainer = screen.getByTestId('resource-container');
     expect(resourceContainer).toBeInTheDocument();
-  })
-  
-  it('should render 5 resources', () => {
-    const resourceElement = screen.getAllByTestId('resource');
     expect(resourceElement.length).toBe(5);
   })
   
