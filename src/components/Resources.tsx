@@ -1,11 +1,10 @@
-import React from 'react';
 import { IResource } from '../config/config';
 
 interface OwnProps {
   resources: IResource[];
 }
 
-const Resources: React.FC<OwnProps> = ({ resources }: OwnProps) => {
+const Resources = ({ resources }: OwnProps) => {
   return (
     <div className={'resource-container flex flex-row justify-around w-9/12'} data-testid={'resource-container'}>
       {resources.map((resource, resourceKey) => (
