@@ -23,9 +23,11 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
     "test": "craco test",
-    "clean": "rm -rf ./build",
+    "clean": "rm -rf build",
+    "build": "craco build",
+    "crx": "crx pack ./build -p ./key.pem -o ./release/chrome-simple-start.crx",
+    "package": "run-s clean build crx",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -1,10 +1,13 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Simple Chrome newtab/start page",
   "short_name": "chrome-simple-start",
   "version": "0.0.1",
   "description": "A minimal (and customizable) new tab/start page for Chrome",
   "author": "Marc J. Miller",
+  "icons": {
+    "128": "css-logo.png"
+  },
 
   "chrome_url_overrides": {
     "newtab": "index.html"

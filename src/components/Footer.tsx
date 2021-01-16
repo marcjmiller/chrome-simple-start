@@ -7,7 +7,7 @@ const Footer = () => {
           className={'text-red-500'}
           href='https://github.com/deepjyoti30/startpage.git'
           target='_blank'
-          referrerPolicy='no-referrer'
+          rel='noreferrer'
         >
           startpage
         </a>
