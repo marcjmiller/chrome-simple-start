@@ -1,4 +1,4 @@
-import { IResource } from '../config/config';
+import { IResource } from '../config';
 
 interface OwnProps {
   resources: IResource[];

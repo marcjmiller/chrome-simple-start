@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import Resources from '../components/Resources';
-import { IResource } from '../config/config';
+import { IResource } from '../config';
 
 describe('Resources test', () => {
   const resources: IResource[] = [

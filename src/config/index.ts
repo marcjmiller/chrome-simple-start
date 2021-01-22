@@ -13,7 +13,7 @@ export interface IResource {
   links: { text: string; url: string }[];
 }
 
-const config: IConfig = {
+export const defaultConfig: IConfig = {
   username: 'marcjmiller',
   hideClock: false,
   hideFooter: false,
@@ -69,5 +69,23 @@ const config: IConfig = {
     },
   ],
 };
+
+const loadDefaultConfigToLocalStorage = () => {
+  localStorage.setItem('config', JSON.stringify(defaultConfig));
+};
+
+export const parseLocalConfigOrUseDefault = (useDefault?: boolean) => {
+  if (useDefault) {
+    return JSON.parse(JSON.stringify(defaultConfig));
+  }
+
+  if (localStorage.getItem('config') === '') {
+    loadDefaultConfigToLocalStorage();
+  }
+
+  return JSON.parse(localStorage.getItem('config')!);
+};
+
+const config = parseLocalConfigOrUseDefault();
 
 export default config;

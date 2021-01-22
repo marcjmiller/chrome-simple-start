@@ -7,26 +7,26 @@ import Header from './Header';
 import Resources from './Resources';
 import Search from './Search';
 
-import config, { IResource } from '../config/config';
+import config, { defaultConfig } from '../config';
+import SettingsPopup from './SettingsPopup';
 import Icons from './Icons';
 
-const App: React.FC = () => {
+const App = () => {
   const [showSettings, setShowSettings] = useState(false);
+  const toggleShowSettings = () => setShowSettings(!showSettings);
 
   return (
     <div className='app-container bg-white dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col text-center justify-around items-center min-h-screen min-w-screen'>
-      <div className={''}>
-        <Icons name={'cog'} className={'absolute top-1 right-1'} onClick={() => setShowSettings(!showSettings)} />
-        {showSettings && (
-          <div className={'absolute top-10 right-1 p-4 mx-4 bg-gray-600 rounded-lg '}>Settings shown!</div>
-        )}
+      <div className={'toggle-show-settings fixed'} data-testid={'toggle-show-settings'}>
+        <Icons name={'cog'} className={'fixed top-1 right-1'} onClick={toggleShowSettings} />
+        {showSettings && <SettingsPopup config={config} />}
       </div>
-      {!config.hideHeader && <Header />}
-      {!config.hideGreeter && <Greeter username={config.username} />}
-      {!config.hideClock && <Clock />}
-      {!config.hideSearch && <Search />}
-      <Resources resources={config.resources.length > 0 ? config.resources : ([] as IResource[])} />
-      {!config.hideFooter && <Footer />}
+      {(!config || !config.hideHeader) && <Header />}
+      {(!config || !config.hideGreeter) && <Greeter username={config?.username || defaultConfig.username} />}
+      {(!config || !config.hideClock) && <Clock />}
+      {(!config || !config.hideSearch) && <Search />}
+      <Resources resources={config?.resources.length > 0 ? config.resources : defaultConfig.resources} />
+      {(!config || !config.hideFooter) && <Footer />}
     </div>
   );
 };

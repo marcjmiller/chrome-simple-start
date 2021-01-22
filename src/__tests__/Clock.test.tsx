@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { screen, render } from '@testing-library/react';
 
 import Clock from '../components/Clock';
@@ -8,6 +8,5 @@ describe('Clock tests', () => {
     render(<Clock />);
     const clockElement = screen.getByTestId('clock-container');
     expect(clockElement).toBeInTheDocument();
-  })
-  
-})
+  });
+});

@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Simple Chrome newtab/start page",
   "short_name": "chrome-simple-start",
   "version": "0.0.1",
@@ -8,7 +8,9 @@
   "icons": {
     "128": "css-logo.png"
   },
-
+  "permissions": [
+    "storage"
+  ],
   "chrome_url_overrides": {
     "newtab": "index.html"
   }
