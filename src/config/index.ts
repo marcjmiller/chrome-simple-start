@@ -13,7 +13,7 @@ export interface IResource {
   links: { text: string; url: string }[];
 }
 
-export const defaultConfig: IConfig = {
+export const defaultConfig = {
   username: 'marcjmiller',
   hideClock: false,
   hideFooter: false,
