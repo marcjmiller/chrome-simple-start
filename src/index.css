@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.setting-container {
+  @apply w-3/4 m-1 p-4 flex flex-row justify-between self-center;
+}
+
+.setting {
+  @apply cursor-pointer;
+}

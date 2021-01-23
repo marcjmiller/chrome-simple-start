@@ -19,7 +19,7 @@ const App = () => {
     <div className='app-container bg-white dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col text-center justify-around items-center min-h-screen min-w-screen'>
       <div className={'toggle-show-settings fixed'} data-testid={'toggle-show-settings'}>
         <Icons name={'cog'} className={'fixed top-1 right-1'} onClick={toggleShowSettings} />
-        {showSettings && <SettingsPopup config={config} />}
+        {showSettings && <SettingsPopup config={config} toggleShowSettings={toggleShowSettings} />}
       </div>
       {(!config || !config.hideHeader) && <Header />}
       {(!config || !config.hideGreeter) && <Greeter username={config?.username || defaultConfig.username} />}
