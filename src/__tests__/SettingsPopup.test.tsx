@@ -6,8 +6,8 @@ import { defaultConfig } from '../config';
 
 describe('SettingsPopup tests', () => {
   it('should render SettingsPopup', () => {
-    render(<SettingsPopup config={defaultConfig} />);
-    const subject = screen.getByText(/settings/i);
+    render(<SettingsPopup config={JSON.parse(JSON.stringify(defaultConfig))} toggleShowSettings={jest.fn()} />);
+    const subject = screen.getByText(/username/i);
     expect(subject).toBeInTheDocument();
   });
 });

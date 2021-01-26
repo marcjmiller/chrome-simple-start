@@ -70,13 +70,9 @@ export const defaultConfig = {
   ],
 };
 
-const loadDefaultConfigToLocalStorage = () => {
-  localStorage.setItem('config', JSON.stringify(defaultConfig));
-};
-
 export const parseLocalConfigOrUseDefault = (useDefault?: boolean) => {
-  if (localStorage.getItem('config') === '' || localStorage.getItem('config') === null) {
-    loadDefaultConfigToLocalStorage();
+  if (!localStorage.getItem('config')) {
+    localStorage.setItem('config', JSON.stringify(defaultConfig));
   }
 
   return JSON.parse(localStorage.getItem('config')!);
