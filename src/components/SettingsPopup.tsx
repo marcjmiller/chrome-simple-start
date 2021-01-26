@@ -11,7 +11,7 @@ const SettingsPopup = ({ config, toggleShowSettings }: OwnProps) => {
     return /true/i.test(value);
   };
 
-  const [username, setUsername] = useState(config.username);
+  const [username, ] = useState(config.username);
   const [hideHeader, setHideHeader] = useState(asBool(config.hideHeader));
   const [hideFooter, setHideFooter] = useState(asBool(config.hideFooter));
   const [hideClock, setHideClock] = useState(asBool(config.hideClock));

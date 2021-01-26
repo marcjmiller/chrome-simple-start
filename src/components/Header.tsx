@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className={'header-container text-5xl'} data-testid={'header-container'}>
+    <div className={'header-container'} data-testid={'header-container'}>
       chrome-simple-start
     </div>
   );
