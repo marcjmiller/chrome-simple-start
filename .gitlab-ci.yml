@@ -5,8 +5,10 @@ stages:
 build:
   stage: build
   image: node
+  only:
+    changes:
+      - package-lock.json
   artifacts:
-    expire_in: 1 hour
     paths:
       - build
       - node_modules/  
