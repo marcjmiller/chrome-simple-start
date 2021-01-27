@@ -31,9 +31,9 @@ const SettingsPopup = ({ config, toggleShowSettings }: OwnProps) => {
   };
 
   return (
-    <div className={'settings-popUp fixed top-0 right-0 p-4 m-6 bg-gray-700 rounded-lg w-1/4'}>
-      <div className={'flex flex-col justify-center items-center text-xl'}>
-        <div className={'text-2xl underline'}>
+    <div className={'settings-popUp'}>
+      <div className={'settings-container'}>
+        <div className={'settings-header'}>
           <span>Settings (click to change)</span>
         </div>
         <div className={'setting-container'}>
@@ -85,7 +85,7 @@ const SettingsPopup = ({ config, toggleShowSettings }: OwnProps) => {
             {hideFooter.toString()}
           </span>
         </div>
-        <div className={'cursor-pointer rounded bg-gray-500 px-4 py-1 mt-4'} onClick={writeSettingsToLocalStorage}>
+        <div className={'button'} onClick={writeSettingsToLocalStorage}>
           Save Settings
         </div>
       </div>
