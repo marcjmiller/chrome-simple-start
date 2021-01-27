@@ -6,9 +6,9 @@ stages:
 
 build:
   stage: build
-  # only:
-  #   changes:
-  #     - package-lock.json
+  only:
+    changes:
+      - package-lock.json
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
