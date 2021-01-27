@@ -8,10 +8,11 @@ build:
   only:
     changes:
       - package-lock.json
-  artifacts:
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
     paths:
-      - build
-      - node_modules/  
+      - .npm
+      - node_modules 
   script:
     - echo "Building chrome-simple-start"
     - npm ci --verbose
@@ -21,8 +22,13 @@ build:
 
 test:
   stage: test
-  needs: ["build"]
   image: node
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    policy: pull
+    paths:
+      - .npm
+      - node_modules
   script:
     - echo "Starting unit tests"
     - CI=true npm test
