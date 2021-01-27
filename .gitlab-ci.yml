@@ -1,0 +1,9 @@
+build-job:
+  stage: build
+  script:
+    - npm run build
+
+test-job:
+  stage: test
+  script:
+    - npm test
