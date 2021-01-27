@@ -1,9 +1,8 @@
-build-job:
-  stage: build
-  script:
-    - npm run build
+image: node:10
 
-test-job:
+
+test:
   stage: test
   script:
+    - npm install
     - npm test
