@@ -1,11 +1,24 @@
-image: node:15
+image: node
+stages:
+  - build
+  - test
 
-build deps:
+build:
   stage: build
   script:
+    - echo "Building chrome-simple-start"
     - npm ci --verbose
+    - npm run build
+    - echo "chrome-simple-start build success!"
+    artifacts:
+      expire_in: 1 hour
+        paths:
+          - build
+          - node_modules/
 
-unit tests:
+test:
   stage: test
   script:
-    - npm test
+    - echo "Starting unit tests"
+    - CI=true npm test
+    - echo "Unit tests complete!"
