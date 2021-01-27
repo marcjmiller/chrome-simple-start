@@ -1,10 +1,11 @@
+image: node:slim
+
 stages:
   - build
   - test
 
 build:
   stage: build
-  image: node
   # only:
   #   changes:
   #     - package-lock.json
@@ -19,10 +20,8 @@ build:
     - npm run build
     - echo "chrome-simple-start build success!"
 
-
 test:
   stage: test
-  image: node
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     policy: pull
@@ -33,3 +32,6 @@ test:
     - echo "Starting unit tests"
     - CI=true npm test
     - echo "Unit tests complete!"
+
+variables:
+  npm_config_cache: "${CI_PROJECT_DIR}/.npm"
