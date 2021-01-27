@@ -1,8 +1,11 @@
 image: node:15
 
+build deps:
+  stage: build
+  script:
+    - npm ci --verbose
 
-test:
+unit tests:
   stage: test
   script:
-    - npm install
     - npm test
