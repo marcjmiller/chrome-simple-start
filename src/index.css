@@ -11,7 +11,7 @@
 }
 
 .clock-container {
-  
+  @apply text-5xl;
 }
 
 .footer-container {
@@ -19,7 +19,7 @@
 }
 
 .greeter-container {
-  
+  @apply text-6xl;
 }
 
 .header-container {
@@ -31,11 +31,11 @@
 }
 
 .resource-container {
-  @apply flex flex-row justify-around w-11/12;
+  @apply flex flex-row justify-around w-5/6;
 }
 
 .resource {
-  @apply px-12 py-4 font-medium bg-gray-300 rounded-lg dark:bg-gray-800;
+  @apply px-12 py-4 font-medium bg-gray-300 rounded-lg dark:bg-gray-800 w-1/6;
 }
 
 .resource-header {
@@ -47,11 +47,11 @@
 }
 
 .search-container {
-  
+  @apply flex w-1/2;
 }
 
 .setting-container {
-  @apply flex flex-row self-center justify-between w-3/4 p-4 m-1;
+  @apply flex flex-row self-center justify-between w-11/12 p-4 m-1;
 }
 
 .setting {
@@ -59,7 +59,7 @@
 }
 
 .settings-container {
-  @apply flex flex-col justify-center items-center text-xl;
+  @apply flex flex-col justify-center items-center text-xl md:text-base;
 }
 
 .settings-header {

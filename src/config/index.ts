@@ -18,7 +18,7 @@ export const defaultConfig = {
   hideClock: false,
   hideFooter: false,
   hideGreeter: false,
-  hideHeader: false,
+  hideHeader: true,
   hideSearch: false,
   resources: [
     {
