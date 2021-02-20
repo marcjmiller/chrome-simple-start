@@ -11,7 +11,7 @@ describe('Greeter tests', () => {
   });
 
   it('should render the username provided', () => {
-    const greeter = screen.getByText(/hello test user please ignore!/i);
+    const greeter = screen.getByText(/hello, test user please ignore!/i);
 
     expect(greeter).toBeInTheDocument();
   });

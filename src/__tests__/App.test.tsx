@@ -12,13 +12,14 @@ describe('App.tsx tests', () => {
     expect(settingsToggle).toBeInTheDocument();
   });
 
-  it('should render the header text', () => {
-    const headingContainer = screen.getByText(/chrome-simple-start/i);
-    expect(headingContainer).toBeInTheDocument();
-  });
+  // This is currently disabled because the default config hides this information
+  // it('should render the header text', () => {
+  //   const headingContainer = screen.getByText(/chrome-simple-start/i);
+  //   expect(headingContainer).toBeInTheDocument();
+  // });
 
   it('should render the greeter text', () => {
-    const greeterText = screen.getByText(/hello marcjmiller!/i);
+    const greeterText = screen.getByText(/hello, marcjmiller!/i);
     expect(greeterText).toBeInTheDocument();
   });
 
