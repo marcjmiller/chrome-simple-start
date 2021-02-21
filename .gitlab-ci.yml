@@ -1,4 +1,4 @@
-image: node:slim
+image: node:15-alpine
 
 stages:
   - build
@@ -14,10 +14,12 @@ build:
     paths:
       - .npm
       - node_modules 
-  script:
+  before_script:
     - echo "Building chrome-simple-start"
+  script:
     - npm ci --verbose
     - npm run build
+  after_script:
     - echo "chrome-simple-start build success!"
 
 test:
@@ -28,9 +30,11 @@ test:
     paths:
       - .npm
       - node_modules
-  script:
+  before_script:
     - echo "Starting unit tests"
+  script:
     - CI=true npm test
+  after_script:
     - echo "Unit tests complete!"
 
 variables:
