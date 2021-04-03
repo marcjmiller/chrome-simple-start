@@ -25,7 +25,7 @@ describe('Resources test', () => {
   ];
 
   beforeEach(() => {
-    render(<Resources resources={resources} />);
+    render(<Resources editResources={false} toggleEditResources={jest.fn} resources={resources} />);
   });
 
   it('should render resource categories appropriately', () => {

@@ -15,17 +15,28 @@ const App = () => {
   const [showSettings, setShowSettings] = useState(false);
   const toggleShowSettings = () => setShowSettings(!showSettings);
 
+  const [editResources, setEditResources] = useState(false);
+  const toggleEditResources = () => setEditResources(!editResources);
+
   return (
     <div className='app-container'>
       <div className={'toggle-show-settings fixed'} data-testid={'toggle-show-settings'}>
-        <Icons name={'cog'} className={'fixed top-1 right-1 cursor-pointer opacity-25 hover:opacity-100'} onClick={toggleShowSettings} />
+        <Icons
+          name={'cog'}
+          className={'fixed top-1 right-1 cursor-pointer opacity-25 hover:opacity-100'}
+          onClick={toggleShowSettings}
+        />
         {showSettings && <SettingsPopup config={config} toggleShowSettings={toggleShowSettings} />}
       </div>
       {(!config || !config.hideHeader) && <Header />}
       {(!config || !config.hideGreeter) && <Greeter username={config?.username || defaultConfig.username} />}
       {(!config || !config.hideClock) && <Clock />}
       {(!config || !config.hideSearch) && <Search />}
-      <Resources resources={config?.resources.length > 0 ? config.resources : defaultConfig.resources} />
+      <Resources
+        resources={config?.resources.length > 0 ? config.resources : defaultConfig.resources}
+        editResources={editResources}
+        toggleEditResources={toggleEditResources}
+      />
       {(!config || !config.hideFooter) && <Footer />}
     </div>
   );

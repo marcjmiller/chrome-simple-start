@@ -8,6 +8,5 @@ describe('Header tests', () => {
     render(<Header />);
     const headerElement = screen.getByText(/chrome-simple-start/i);
     expect(headerElement).toBeInTheDocument();
-  })
-  
-})
+  });
+});

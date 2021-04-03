@@ -17,26 +17,24 @@ const Search = () => {
 
   const handleKeyPress = (key: string) => {
     if (key === 'Enter') {
-      handleSearch()
+      handleSearch();
     }
-
-  }
+  };
 
   return (
     <div className={'search-container'} data-testid={'search-container'}>
       <input
-        className={'w-full text-lg resize-none rounded-l-lg text-gray-900 p-2 outline-none border border-gray-900'}
+        className={'w-full text-lg resize-none rounded-l-lg text-gray-900 p-2 p-4 outline-none border border-gray-900'}
         placeholder={'Search something on Google...'}
         value={searchValue}
         onChange={({ target: { value } }) => handleChange(value)}
-        onKeyPress={({key}) => handleKeyPress(key)}
+        onKeyPress={({ key }) => handleKeyPress(key)}
       />
       <div
         className={clsx(
           'rounded-r-lg bg-white w-1/6 flex flex-row justify-center items-center border border-gray-900 font-bold',
           isSearchFilled ? 'text-gray-900 hover:text-red-400 cursor-pointer' : 'text-gray-400 cursor-default'
         )}
-        
         onClick={handleSearch}
       >
         Search

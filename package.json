@@ -26,6 +26,7 @@
   "scripts": {
     "start": "craco start",
     "test": "craco test",
+    "format": "prettier --write \"src/**/*.tsx\"",
     "clean": "rm -rf build",
     "build": "craco build",
     "crx": "crx pack ./build -p ./key.pem -o ./release/chrome-simple-start.crx",
@@ -49,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
   }
 }
